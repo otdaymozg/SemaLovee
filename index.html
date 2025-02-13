@@ -1,92 +1,109 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>люблю тебя больше,чем квас (и даже больше тортов)</title>
-  <style>
-    /* Сброс базовых отступов */
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    /* Центрирование содержимого */
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-    }
-    /* Текст сверху */
-    header {
-      margin-top: 30px;
-      font-size: 28px;
-      font-weight: bold;
-      color: #333;
-    }
-    /* Кнопка-сердечко */
-    .heart-button {
-      background-color: lavender; /* Лавандовый фон */
-      border: none;
-      border-radius: 50%; /* Круглая кнопка */
-      width: 100px;
-      height: 100px;
-      font-size: 50px;
-      color: red;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 50px;
-      transition: transform 0.2s ease;
-    }
-    .heart-button:hover {
-      transform: scale(1.1);
-    }
-    /* Скрытый контент (картинка и подпись) */
-    .hidden-content {
-      display: none;
-      margin-top: 30px;
-      text-align: center;
-    }
-    .hidden-content img {
-      max-width: 80%;
-      height: auto;
-      margin-bottom: 10px;
-    }
-    .caption {
-      font-size: 22px;
-      color: #555;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сема хватит кусаться</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #fff0f5; /* Лавандовый фон */
+            margin: 0;
+            padding: 0;
+        }
+
+        #click-text {
+            margin-top: 50px;
+            font-size: 28px;
+            color: #4682B4; /* Небесно-голубой цвет */
+            font-weight: bold;
+        }
+
+        .heart-button {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            background-color: #E6A8D7; /* Лавандовый цвет */
+            border: none;
+            cursor: pointer;
+            transform: rotate(45deg);
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .heart-button:before, .heart-button:after {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background-color: #E6A8D7; /* Лавандовый цвет */
+            border-radius: 50%;
+        }
+
+        .heart-button:before {
+            top: -125px;
+            left: 0;
+        }
+
+        .heart-button:after {
+            left: -125px;
+            top: 0;
+        }
+
+        .hidden-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .hidden-content img {
+            width: 300px; /* Настройте размер картинки */
+            margin-top: 20px;
+        }
+
+        .hidden-content p {
+            font-size: 24px;
+            color: #4682B4; /* Небесно-голубой цвет */
+            font-weight: bold;
+        }
+
+        .blue-text {
+            font-size: 22px;
+            color: #4682B4; /* Небесно-голубой цвет */
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .four-lines {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #4682B4; /* Небесно-голубой цвет */
+            line-height: 1.5;
+            white-space: pre-line; /* Позволяет переносить строки */
+        }
+    </style>
 </head>
 <body>
-  <!-- Верхний текст -->
-  <header>Сема тыкай</header>
-  
-  <!-- Кнопка-сердечко по центру -->
-  <button class="heart-button" id="heartButton">&#10084;</button>
-  
-  <!-- Скрытый контент: картинка и подпись -->
-  <div class="hidden-content" id="hiddenContent">
-    <img src="5289786656850832947.jpg" alt="Картинка">
-    <div class="caption">С 14 февраля!!!</div>
-  </div>
-  
-  <script>
-    // Получаем элементы по идентификаторам
-    const heartButton = document.getElementById('heartButton');
-    const hiddenContent = document.getElementById('hiddenContent');
-    
-    // По нажатию на кнопку переключаем видимость скрытого контента
-    heartButton.addEventListener('click', function() {
-      if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
-        hiddenContent.style.display = 'block';
-      } else {
-        hiddenContent.style.display = 'none';
-      }
-    });
-  </script>
+
+    <h1 id="click-text">Сема тыкай сюда</h1>
+
+    <button class="heart-button" onclick="showContent()"></button>
+
+    <div class="hidden-content" id="content">
+        <p class="blue-text">Ты для меня дороже кваса</p>
+        <img src="5289786656850832947.jpg" alt="Сюрприз">
+        <p>С 14 февраля !!!</p>
+        <p class="four-lines">С тобой - хоть вардить в лес</p>
+    </div>
+
+    <script>
+        function showContent() {
+            document.getElementById("click-text").style.display = "none"; // Убираем "Сема тыкай"
+            document.getElementById("content").style.display = "block"; // Показываем скрытые элементы
+        }
+    </script>
+
 </body>
 </html>
