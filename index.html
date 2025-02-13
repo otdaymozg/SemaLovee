@@ -22,8 +22,8 @@
 
         .heart-button {
             position: relative;
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             background-color: #E6A8D7; /* Лавандовый цвет */
             border: none;
             cursor: pointer;
@@ -37,19 +37,19 @@
         .heart-button:before, .heart-button:after {
             content: '';
             position: absolute;
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             background-color: #E6A8D7; /* Лавандовый цвет */
             border-radius: 50%;
         }
 
         .heart-button:before {
-            top: -125px;
+            top: -100px;
             left: 0;
         }
 
         .heart-button:after {
-            left: -125px;
+            left: -100px;
             top: 0;
         }
 
@@ -83,24 +83,34 @@
             line-height: 1.5;
             white-space: pre-line; /* Позволяет переносить строки */
         }
+
+        /* Добавим отступы для переноса текста "С тобой - хоть вардить в лес" на 6 строк */
+        .spacer {
+            height: 6em; /* 6 строк */
+        }
     </style>
 </head>
 <body>
 
-    <h1 id="click-text">Сема тыкай сюда</h1>
+    <h1 id="click-text">Сема тыкай</h1>
 
-    <button class="heart-button" onclick="showContent()"></button>
+    <button class="heart-button" id="heart" onclick="showContent()"></button>
 
     <div class="hidden-content" id="content">
         <p class="blue-text">Ты для меня дороже кваса</p>
         <img src="5289786656850832947.jpg" alt="Сюрприз">
-        <p>С 14 февраля !!!</p>
+        <p>С 14 февраля❤️ !!!</p>
+        
+        <!-- Spacer для отступа -->
+        <div class="spacer"></div>
+
         <p class="four-lines">С тобой - хоть вардить в лес</p>
     </div>
 
     <script>
         function showContent() {
             document.getElementById("click-text").style.display = "none"; // Убираем "Сема тыкай"
+            document.getElementById("heart").style.display = "none"; // Убираем сердце
             document.getElementById("content").style.display = "block"; // Показываем скрытые элементы
         }
     </script>
