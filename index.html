@@ -61,6 +61,7 @@
         .hidden-content img {
             width: 300px; /* Настройте размер картинки */
             margin-top: 20px;
+            cursor: pointer;
         }
 
         .hidden-content p {
@@ -97,9 +98,9 @@
     <button class="heart-button" id="heart" onclick="showContent()"></button>
 
     <div class="hidden-content" id="content">
-        <p class="blue-text">Ты для меня дороже кваса</p>
-        <img src="5289786656850832947.jpg" alt="Сюрприз">
-        <p>С 14 февраля❤️ !!!</p>
+        <p class="blue-text">Ты для меня дороже 1000 литров кваса</p>
+        <img src="5289786656850832947.jpg" alt="Сюрприз" onclick="hideContent()">
+        <p>С 14 февраля❤️!!!</p>
         
         <!-- Spacer для отступа -->
         <div class="spacer"></div>
@@ -113,7 +114,3 @@
             document.getElementById("heart").style.display = "none"; // Убираем сердце
             document.getElementById("content").style.display = "block"; // Показываем скрытые элементы
         }
-    </script>
-
-</body>
-</html>
